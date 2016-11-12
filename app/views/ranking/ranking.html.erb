@@ -1,0 +1,16 @@
+<div class="ranking_items">
+<table class="table table-striped">
+    <% @items.each.with_index(1) do |item, index| %>
+        <tr>
+            <td>
+            <% if item.large_image.present? %>
+              <%= image_tag(item.large_image, :size => "40x40" , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+            <%= index %>位　<%= item.title %>
+            </td>
+        </tr>
+    <% end %>
+</table>
+</div>
